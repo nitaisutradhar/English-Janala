@@ -64,14 +64,22 @@
        <!-- vocabulary Section -->
         <section id="vocabulary" class="text-center space-y-9 my-24">
           <h1 class="font-bold text-4xl"><span class="text-blue-500">Let's</span> Learn Vocabularies</h1>
-          <div class="space-x-2">
-            <button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Learn</button>
-            <button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Learn</button>
+          <div id="learn-Button" class="space-x-2 space-y-2">
           </div>
-          <div class="bg-[#F8F8F8] rounded-3xl space-y-3 py-16">
+          <!-- Empty Lesson Select  -->
+          <div id="select-lesson" class="bg-[#F8F8F8] rounded-3xl space-y-3 py-16">
             <p class="text-[#79716B] text-sm">আপনি এখনো কোন Lesson Select করেন ন</p>
             <h1 class="text-4xl font-medium">একটি Lesson Select করুন।</h1>
           </div>
+          <!-- Select Next Lesson -->
+          <div id="next-lesson" class="bg-[#F8F8F8] rounded-3xl space-y-3 py-16 hidden">
+            <img class="justify-self-center" src="assets/alert-error.png" alt="">
+            <p class="text-sm text-[#79716B]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h1 class="font-medium text-3xl text-[#292524]">নেক্সট Lesson এ যান</h1>
+          </div>
+          <!-- Cards Section -->
+          <div id="lesson-cards" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 p-5 rounded-3xl bg-[#F8F8F8] hidden">
+           </div>
         </section>
         <!-- FAQ section -->
          <section id="faq" class="my-24 space-y-20">
@@ -129,5 +137,7 @@
       </div>
     </footer>
     <script src="script/index.js"></script>
+    <script src="script/fetchAPI.js"></script>
+    <script src="script/showData.js"></script>
 </body>
 </html>
