@@ -49,6 +49,7 @@ data.forEach(element =>{
     `
 lessonCards.appendChild(div);
 })
+hideLoader();
 }
 
 const showInfoDetails = (data) => {

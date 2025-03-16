@@ -10,6 +10,7 @@ const allLevel = async () => {
 }
 
 const wordsByLevel = async (level) => {
+    showLoader();
     try{
         const res = await fetch(`https://openapi.programming-hero.com/api/level/${level}`)
         const data = await res.json();

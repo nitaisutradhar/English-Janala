@@ -16,20 +16,27 @@ const alertBox = document.getElementById('alertBox');
 const protectedSection = document.getElementById('protectedSection');
 const banner = document.getElementById('banner');
 const navbar = document.getElementById('navbar');
+const successModal = document.getElementById('successModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
 
 submitBtn.addEventListener('click', function () {
     const name = nameInput.value.trim();
     const password = passwordInput.value.trim();
     if(name == ""){
-        alert("Please enter your correct name!!!");
+        alert("Please Tell your Name first!!!");
     }
     if(password !== "123456"){
-        alert("Please Enter your correct password!!!");
+        alert("Wrong password Contact admin to get your Login Code!!!");
     }
     if(name !== "" && password === "123456"){
         protectedSection.classList.remove("hidden")
         navbar.classList.remove("hidden")
         banner.classList.add("hidden")
+        successModal.classList.remove('hidden');
+        // Close Modal
+        closeModalBtn.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
     }
   
     
@@ -41,4 +48,16 @@ const logOut = () => {
     navbar.classList.add("hidden")
     
 
+}
+// spinner
+const lessonCards = document.getElementById("lesson-cards");
+const showLoader = () =>{
+    document.getElementById("loader").classList.remove("hidden");
+    lessonCards.classList.add("hidden");
+
+}
+const hideLoader = () =>{
+    document.getElementById("loader").classList.add("hidden");
+    lessonCards.classList.remove("hidden");
+    if(!lessonCards.childNodes.length) lessonCards.classList.add("hidden");
 }
