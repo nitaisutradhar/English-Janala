@@ -18,5 +18,14 @@ const wordsByLevel = async (level) => {
         console.error('Error fetching data:', error);
     }
 }
+const infoDetails = async (id) => {
+    try{
+        const res = await fetch(`https://openapi.programming-hero.com/api/word/${id}`)
+        const data = await res.json();
+        showInfoDetails(data.data);
+    }catch (error){
+        console.error('Error fetching data:', error);
+    }
+}
 
 allLevel();
