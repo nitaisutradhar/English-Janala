@@ -19,7 +19,8 @@ const navbar = document.getElementById('navbar');
 const successModal = document.getElementById('successModal');
 const closeModalBtn = document.getElementById('closeModalBtn');
 
-submitBtn.addEventListener('click', function () {
+submitBtn.addEventListener('click', function (e) {
+    e.preventDefault();
     const name = nameInput.value.trim();
     const password = passwordInput.value.trim();
     if(name == ""){
@@ -61,3 +62,9 @@ const hideLoader = () =>{
     lessonCards.classList.remove("hidden");
     if(!lessonCards.childNodes.length) lessonCards.classList.add("hidden");
 }
+//Pronounciation
+function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-EN'; // English pronunciation
+    speechSynthesis.speak(utterance);
+  }

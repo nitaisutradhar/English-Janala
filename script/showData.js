@@ -40,10 +40,10 @@ data.forEach(element =>{
     <div class="bg-white space-y-6 p-10 rounded-xl">
         <h2 class="text-3xl font-bold">${element.word}</h2>
         <p class="text-xl font-medium">Meaning/Pronounciation</p>
-        <h1 class="text-3xl font-semibold opacity-80">"${element.meaning == null ? "অর্থ নেই": `${element.meaning}`} / ${element.pronunciation}"</h1>
+        <h1 class="text-2xl font-semibold opacity-80">"${element.meaning == null || undefined ? "অর্থ নেই": `${element.meaning}`} / ${element.pronunciation}"</h1>
         <div class="flex justify-between">
         <button onclick="infoDetails(${element.id})" class="bg-[rgba(26,145,255,0.10)] py-3 px-4 rounded-lg"><i class="fa-solid fa-circle-info"></i></button>
-        <a class="bg-[rgba(26,145,255,0.10)] py-3 px-4 rounded-lg" href="#"><i class="fa-solid fa-volume-high"></i></a>
+        <button onclick="pronounceWord('${element.word}')" class="bg-[rgba(26,145,255,0.10)] py-3 px-4 rounded-lg" href="#"><i class="fa-solid fa-volume-high"></i></button>
         </div>
     </div>
     `
@@ -73,7 +73,7 @@ const showInfoDetails = (data) => {
         </h3>
         <div class="space-y-4">
             <p class="font-semibold text-2xl">Meaning</p>
-            <p class="font-medium text-2xl">${data.meaning}</p>
+            <p class="font-medium text-2xl">${data.meaning == null || undefined ? "অর্থ নেই": `${data.meaning}`}</p>
         </div>
         <div class="space-y-4">
             <p class="font-semibold text-2xl">Example</p>
