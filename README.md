@@ -120,8 +120,8 @@ function pronounceWord(word) {
 
 ## Screenshots
 ![Login Page](./ss/Login.jpg)
-![Vocabulary Section](./ss/vocabulary%20section.jpg)
-![FAQ Section](./ss/faq%20section.jpg)
+![Vocabulary Section](./ss/vocabularysection.jpg)
+![FAQ Section](./ss/faqsection.jpg)
 
 ## Contributing
 - Fork the repository and create a new branch.
