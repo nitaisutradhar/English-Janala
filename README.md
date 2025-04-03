@@ -8,7 +8,7 @@ English Janala is a web-based Vocabulary Learning Platform designed to help user
 
 ## Technologies Used
 - HTML
-- CSS
+- Tailwind CSS
 - JavaScript
 
 ## GitHub Repository
@@ -119,9 +119,9 @@ function pronounceWord(word) {
 3. Open `index.html` in a browser or run a local server.
 
 ## Screenshots
-![Login Page](./ss/Login.jpg)
-![Vocabulary Section](./ss/vocabularysection.jpg)
-![FAQ Section](./ss/faqsection.jpg)
+![Login Page](./SS/Login.jpg)
+![Vocabulary Section](./SS/vocabularysection.jpg)
+![FAQ Section](./SS/faqsection.jpg)
 
 ## Contributing
 - Fork the repository and create a new branch.
