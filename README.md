@@ -1,93 +1,84 @@
 # English Janala - Vocabulary Learning Platform
 
 ## Overview
-English Janala is a web-based Vocabulary Learning Platform designed to help users learn new words interactively. It features a smooth user experience with dynamic content loading, custom navigation, a login system, and an engaging UI based on a Figma design.
+English Janala is an interactive web-based vocabulary learning platform designed to enhance users' language skills. It features a seamless user experience with dynamic content loading, custom navigation, a secure login system, and an engaging UI based on a Figma design.
 
 ## Live Demo
-[Click here to visit the website](https://enlishjanala.netlify.app/)
+[Explore English Janala](https://enlishjanala.netlify.app/)
 
 ## Technologies Used
-- HTML
-- Tailwind CSS
-- JavaScript
+- **HTML**
+- **Tailwind CSS**
+- **JavaScript**
 
 ## GitHub Repository
-[Click here to access the GitHub repository](https://github.com/nitaisutradhar/English-Janala.git)
+[Visit the Repository](https://github.com/nitaisutradhar/English-Janala.git)
+
+---
 
 ## Features
 
-### Navbar
+### 🌐 Navigation Bar
 - Fixed at the top with a bottom border.
-- Includes a logo and brand name on the left.
-- Three buttons with icons:
-  - **FAQ**: Jumps to the FAQ section.
-  - **Learn**: Jumps to the Vocabulary section.
-  - **Logout**: Logs the user out and resets the UI.
+- Contains a **logo** and **brand name**.
+- Three interactive buttons:
+  - **FAQ** – Navigates to the FAQ section.
+  - **Learn** – Navigates to the Vocabulary section.
+  - **Logout** – Logs the user out and resets the UI.
 
-### Banner
-- Displays a title, paragraph, and login form on the left.
-- Shows an image on the right.
-- Aligned according to the Figma design.
+### 🎯 Banner Section
+- Displays a **title, description, and login form** on the left.
+- Includes an **illustrative image** on the right.
+- Fully aligned with the Figma design.
 
-### FAQ Section
-Contains answers to the following JavaScript-related questions:
+### ❓ FAQ Section
+Provides answers to key JavaScript-related questions:
 1. Difference between `var`, `let`, and `const`.
 2. Difference between `map()`, `forEach()`, and `filter()`.
-3. Explanation of arrow functions vs regular functions.
+3. Arrow functions vs. regular functions.
 4. How JavaScript Promises work.
-5. How closures work in JavaScript.
+5. Understanding JavaScript closures.
 
-### Footer
-- Displays the logo and social media icons.
-- Clicking social icons opens the respective profile in a new tab.
+### 📌 Vocabulary Section
+- Displays a **center-aligned heading**.
+- Dynamically generates **lesson buttons** from **API-01** upon page load.
+- Clicking a lesson button:
+  - Fetches words via **API-02**.
+  - Displays words in **card format** with:
+    - Word
+    - Meaning & pronunciation
+    - Two interactive buttons
+- Shows **'No Word Found'** message if no words exist.
+- Highlights the **active lesson** button.
 
-### Vocabulary Section
-- Displays a center-aligned heading as per the Figma design.
-- Dynamically generates buttons from **API-01** for each lesson, loaded on page load.
-- Default text displayed initially.
-- Clicking a lesson button loads all words from **API-02** and displays them in a card format with:
-  - Word
-  - Word meaning & pronunciation
-  - Two buttons with relevant icons.
-- Displays a ***No Word Found*** message if no words exist for a lesson.
-- Highlights the active lesson button.
-
-### Vocabulary Details
-- Clicking the details icon opens a modal with:
+### 📖 Vocabulary Details
+- Clicking the **details icon** opens a modal displaying:
   - Word with pronunciation
   - Example sentence
   - Synonyms
-  - "Complete Learning" button to close the modal.
-- Data loaded from **API-03**.
+  - "Complete Learning" button to close the modal
+- Data is loaded from **API-03**.
 
-### Custom Navigation & Smooth Scrolling
-- Initially, only the Banner and Footer are visible.
-- Login form functionalities:
-  - Shows an alert if name is missing.
-  - Shows an alert if password is incorrect (only accepts "123456").
-  - On valid login:
-    - Displays success alert.
-    - Hides the Banner.
-    - Displays the Navbar, Vocabulary Section, and FAQ Section.
-- Logout functionality:
-  - Hides Navbar, Vocabulary Section, and FAQ Section.
-  - Displays only the Banner and Footer.
-- Smooth scrolling implemented for FAQ & Learn buttons.
+### 🔄 Custom Navigation & Smooth Scrolling
+- Initially, only the **Banner and Footer** are visible.
+- **Login functionality:**
+  - Displays an **alert** if the name is missing.
+  - Shows an **alert** if the password is incorrect (Only `123456` is accepted).
+  - On successful login:
+    - Displays a **success alert**.
+    - Hides the **Banner**.
+    - Shows **Navbar, Vocabulary Section, and FAQ Section**.
+- **Logout functionality:**
+  - Hides **Navbar, Vocabulary Section, and FAQ Section**.
+  - Displays only the **Banner and Footer**.
+- **Smooth scrolling** implemented for FAQ & Learn buttons.
 
-### Handling Invalid Data
-- Prevents displaying falsy values like `undefined` or `null`.
-- Displays relevant words if no data is found.
+### 🚀 Additional Features
+- **Error Handling:** Prevents displaying falsy values (`undefined` or `null`).
+- **Loading Spinner:** Displays a spinner while fetching vocabulary data.
+- **SweetAlert2 Integration:** Enhances alerts with visually appealing popups.
+- **Voice Pronunciation:** Implements `SpeechSynthesisUtterance` API to pronounce words.
 
-### Loading Spinner
-- Displays a loading spinner when vocabulary data is being fetched from the API.
-
-### Sweet Alert Integration
-- Replaces basic alerts with Sweet Alert popups.
-- Uses [SweetAlert2](https://sweetalert2.github.io/) for better user experience.
-
-### Speak Your Vocabularies
-- Implements voice pronunciation for vocabulary words using the `SpeechSynthesisUtterance` API.
-- Function to be triggered on clicking the sound icon:
 ```js
 function pronounceWord(word) {
     const utterance = new SpeechSynthesisUtterance(word);
@@ -96,38 +87,39 @@ function pronounceWord(word) {
 }
 ```
 
-## Requirements
-- Fetch vocabulary data dynamically from three APIs:
-  - **API-01**: Retrieves lesson buttons.
-  - **API-02**: Fetches words for a selected lesson.
-  - **API-03**: Provides details of a selected word.
-- Implement smooth UI interactions using JavaScript, HTML, and CSS.
-- Ensure responsive design based on the Figma layout.
-- Implement secure login/logout functionality.
-- Use SweetAlert2 for better alert popups.
-- Ensure seamless navigation with smooth scrolling.
+---
 
-## Setup Instructions
-1. Clone the repository:
+## 📌 API Requirements
+1. **API-01**: Retrieves lesson buttons.
+2. **API-02**: Fetches words for the selected lesson.
+3. **API-03**: Provides detailed information about a selected word.
+
+## 🛠️ Setup Instructions
+1. **Clone the repository:**
    ```sh
    git clone https://github.com/nitaisutradhar/English-Janala.git
    ```
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
    ```sh
    cd English-Janala
    ```
-3. Open `index.html` in a browser or run a local server.
+3. **Open `index.html` in a browser** or run a local server.
 
-## Screenshots
-![Login Page](./SS/Login.jpg)
-![Vocabulary Section](./SS/vocabularysection.jpg)
-![FAQ Section](./SS/faqsection.jpg)
+---
 
-## Contributing
-- Fork the repository and create a new branch.
-- Commit your changes with descriptive messages.
-- Submit a pull request for review.
+## 🖼️ Screenshots
+| Login Page | Vocabulary Section | FAQ Section |
+|------------|-------------------|-------------|
+| ![Login](./SS/Login.jpg) | ![Vocabulary](./SS/vocabularysection.jpg) | ![FAQ](./SS/faqsection.jpg) |
 
-## License
+---
+
+## 🤝 Contributing
+- **Fork** the repository.
+- Create a **new branch**.
+- Make meaningful **commits**.
+- Submit a **pull request** for review.
+
+## 📜 License
 This project is open-source and available under the [MIT License](LICENSE).
 
